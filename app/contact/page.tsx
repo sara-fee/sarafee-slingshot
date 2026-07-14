@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import Script from 'next/script'
+import PageHero from '@/components/PageHero/PageHero'
+import StructuredData from '@/components/StructuredData/StructuredData'
 import ContactForm from '@/components/ContactForm/ContactForm'
 import styles from './contact.module.css'
 
@@ -19,49 +20,39 @@ export const metadata: Metadata = {
 }
 
 export default function Contact() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Your Name',
+    description: 'Get in touch for web development projects and collaborations',
+    url: 'https://yourwebsite.com/contact',
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Your Name',
+      email: 'your.email@example.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'San Francisco',
+        addressRegion: 'CA',
+        addressCountry: 'US',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'Professional Services',
+        email: 'your.email@example.com',
+        availableLanguage: ['English'],
+        areaServed: 'Worldwide',
+      },
+    },
+  }
+
   return (
     <div className={styles.contact}>
-      {/* JSON-LD Structured Data for ContactPage */}
-      <Script
-        id="structured-data-contact"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ContactPage',
-            name: 'Contact Your Name',
-            description: 'Get in touch for web development projects and collaborations',
-            url: 'https://yourwebsite.com/contact',
-            mainEntity: {
-              '@type': 'Person',
-              name: 'Your Name',
-              email: 'your.email@example.com',
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'San Francisco',
-                addressRegion: 'CA',
-                addressCountry: 'US',
-              },
-              contactPoint: {
-                '@type': 'ContactPoint',
-                contactType: 'Professional Services',
-                email: 'your.email@example.com',
-                availableLanguage: ['English'],
-                areaServed: 'Worldwide',
-              },
-            },
-          }),
-        }}
+      <StructuredData id="structured-data-contact" data={structuredData} />
+      <PageHero 
+        title="Get In Touch" 
+        subtitle="Let's discuss your project and bring your ideas to life"
       />
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>Get In Touch</h1>
-          <p className={styles.pageSubtitle}>
-            Let's discuss your project and bring your ideas to life
-          </p>
-        </div>
-      </section>
 
       {/* Contact Content */}
       <section className="section">

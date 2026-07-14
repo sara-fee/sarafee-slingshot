@@ -2,32 +2,7 @@
   min-height: calc(100vh - 200px);
 }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, #fef5ef 0%, #fff8f0 50%, #fef9f3 100%);
-  background-image: 
-    radial-gradient(circle at 25% 35%, rgba(224, 122, 95, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 75% 65%, rgba(129, 178, 154, 0.08) 0%, transparent 50%);
-  color: var(--color-text-primary);
-  padding: var(--spacing-2xl) 0;
-  text-align: center;
-}
-
-.pageTitle {
-  font-size: 3.25rem;
-  font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-text-primary);
-}
-
-.pageSubtitle {
-  font-size: 1.375rem;
-  color: var(--color-text-secondary);
-  font-weight: 400;
-  margin: 0;
-}
+/* Hero and page title styles now handled by PageHero component */
 
 /* Projects Grid */
 .projectsGrid {

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import Script from 'next/script'
+import PageHero from '@/components/PageHero/PageHero'
+import StructuredData from '@/components/StructuredData/StructuredData'
 import styles from './announcements.module.css'
 
 export const metadata: Metadata = {
@@ -102,48 +103,36 @@ function formatDate(dateString: string): string {
 }
 
 export default function Announcements() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Your Name - Announcements',
+    description: 'Latest updates, news, and announcements',
+    url: 'https://yourwebsite.com/announcements',
+    author: {
+      '@type': 'Person',
+      name: 'Your Name',
+    },
+    blogPost: announcements.map((announcement) => ({
+      '@type': 'BlogPosting',
+      headline: announcement.title,
+      description: announcement.description,
+      datePublished: announcement.date,
+      author: {
+        '@type': 'Person',
+        name: 'Your Name',
+      },
+    })),
+  }
+
   return (
     <div className={styles.announcements}>
-      {/* JSON-LD Structured Data for Blog/Announcements */}
-      <Script
-        id="structured-data-announcements"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Blog',
-            name: 'Your Name - Announcements',
-            description: 'Latest updates, news, and announcements',
-            url: 'https://yourwebsite.com/announcements',
-            author: {
-              '@type': 'Person',
-              name: 'Your Name',
-            },
-            blogPost: announcements.map((announcement) => ({
-              '@type': 'BlogPosting',
-              headline: announcement.title,
-              description: announcement.description,
-              datePublished: announcement.date,
-              author: {
-                '@type': 'Person',
-                name: 'Your Name',
-              },
-            })),
-          }),
-        }}
+      <StructuredData id="structured-data-announcements" data={structuredData} />
+      <PageHero 
+        title="Announcements" 
+        subtitle="Stay updated with my latest projects, blog posts, and professional milestones"
+        titleId="announcements-title"
       />
-
-      {/* Hero Section */}
-      <section className={styles.hero} aria-labelledby="announcements-title">
-        <div className="container">
-          <h1 id="announcements-title" className={styles.pageTitle}>
-            Announcements
-          </h1>
-          <p className={styles.pageSubtitle}>
-            Stay updated with my latest projects, blog posts, and professional milestones
-          </p>
-        </div>
-      </section>
 
       {/* Announcements List */}
       <section className="section" aria-label="Announcements list">

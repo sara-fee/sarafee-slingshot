@@ -1,10 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Script from 'next/script'
+import SectionTitle from '@/components/SectionTitle/SectionTitle'
+import StructuredData from '@/components/StructuredData/StructuredData'
 import styles from './page.module.css'
 import ResumeDownload from '@/components/ResumeDownload/ResumeDownload'
 import NewsletterSubscribe from '@/components/NewsletterSubscribe/NewsletterSubscribe'
 import Testimonials from '@/components/Testimonials/Testimonials'
+import FlippableCard from '@/components/FlippableCard/FlippableCard'
 
 export const metadata: Metadata = {
   alternates: {
@@ -13,57 +15,52 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Your Name - Web Development Services',
+    description: 'Full Stack Web Development, UI/UX Design, and Performance Optimization Services',
+    url: 'https://yourwebsite.com',
+    image: 'https://yourwebsite.com/og-image.jpg',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'San Francisco',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '37.7749',
+      longitude: '-122.4194',
+    },
+    priceRange: '$$',
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'United States',
+      },
+      {
+        '@type': 'Country',
+        name: 'Canada',
+      },
+      'Worldwide',
+    ],
+    serviceType: [
+      'Web Development',
+      'UI/UX Design',
+      'Performance Optimization',
+      'Full Stack Development',
+    ],
+    provider: {
+      '@type': 'Person',
+      name: 'Your Name',
+      jobTitle: 'Full Stack Developer',
+    },
+  }
+
   return (
     <div className={styles.home}>
-      {/* JSON-LD Structured Data for ProfessionalService */}
-      <Script
-        id="structured-data-service"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ProfessionalService',
-            name: 'Your Name - Web Development Services',
-            description: 'Full Stack Web Development, UI/UX Design, and Performance Optimization Services',
-            url: 'https://yourwebsite.com',
-            image: 'https://yourwebsite.com/og-image.jpg',
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'San Francisco',
-              addressRegion: 'CA',
-              addressCountry: 'US',
-            },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: '37.7749',
-              longitude: '-122.4194',
-            },
-            priceRange: '$$',
-            areaServed: [
-              {
-                '@type': 'Country',
-                name: 'United States',
-              },
-              {
-                '@type': 'Country',
-                name: 'Canada',
-              },
-              'Worldwide',
-            ],
-            serviceType: [
-              'Web Development',
-              'UI/UX Design',
-              'Performance Optimization',
-              'Full Stack Development',
-            ],
-            provider: {
-              '@type': 'Person',
-              name: 'Your Name',
-              jobTitle: 'Full Stack Developer',
-            },
-          }),
-        }}
-      />
+      <StructuredData id="structured-data-service" data={structuredData} />
       {/* Hero Section */}
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className="container">
@@ -92,32 +89,50 @@ export default function Home() {
       {/* What I Do Section */}
       <section className="section" aria-labelledby="services-title">
         <div className="container">
-          <h2 id="services-title" className={styles.sectionTitle}>What I Do</h2>
+          <SectionTitle title="What I Do" titleId="services-title" />
           <div className={styles.highlightsGrid}>
-            <article className={styles.highlightCard}>
-              <div className={styles.highlightIcon} aria-hidden="true">💻</div>
-              <h3>Web Development</h3>
-              <p>
-                Building responsive, performant web applications using modern
-                technologies and best practices.
-              </p>
-            </article>
-            <article className={styles.highlightCard}>
-              <div className={styles.highlightIcon} aria-hidden="true">🎨</div>
-              <h3>UI/UX Design</h3>
-              <p>
-                Creating intuitive and beautiful user interfaces that provide
-                exceptional user experiences.
-              </p>
-            </article>
-            <article className={styles.highlightCard}>
-              <div className={styles.highlightIcon} aria-hidden="true">⚡</div>
-              <h3>Performance Optimization</h3>
-              <p>
-                Optimizing applications for speed, accessibility, and search
-                engine visibility.
-              </p>
-            </article>
+            <FlippableCard
+              icon="💻"
+              title="Web Development"
+              description="Building responsive, performant web applications using modern technologies and best practices."
+              backTitle="Technologies & Skills"
+              backContent={[
+                'React.js & Next.js',
+                'TypeScript & JavaScript',
+                'HTML5 & CSS3',
+                'Responsive Design',
+                'Progressive Web Apps',
+                'RESTful APIs',
+              ]}
+            />
+            <FlippableCard
+              icon="🎨"
+              title="UI/UX Design"
+              description="Creating intuitive and beautiful user interfaces that provide exceptional user experiences."
+              backTitle="Design Expertise"
+              backContent={[
+                'User-Centered Design',
+                'Wireframing & Prototyping',
+                'Design Systems',
+                'Accessibility (WCAG)',
+                'Figma & Adobe XD',
+                'Color Theory & Typography',
+              ]}
+            />
+            <FlippableCard
+              icon="⚡"
+              title="Performance Optimization"
+              description="Optimizing applications for speed, accessibility, and search engine visibility."
+              backTitle="Optimization Focus"
+              backContent={[
+                'Core Web Vitals',
+                'Code Splitting & Lazy Loading',
+                'Image Optimization',
+                'SEO Best Practices',
+                'Lighthouse Audits',
+                'Caching Strategies',
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -125,12 +140,11 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="section" aria-labelledby="testimonials-title">
         <div className="container">
-          <h2 id="testimonials-title" className={styles.sectionTitle}>
-            What Clients Say
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            Don't just take my word for it - hear from people I've worked with
-          </p>
+          <SectionTitle 
+            title="What Clients Say" 
+            subtitle="Don't just take my word for it - hear from people I've worked with"
+            titleId="testimonials-title"
+          />
           <div style={{ maxWidth: '900px', margin: '2rem auto 0' }}>
             <Testimonials variant="default" showAll={false} />
           </div>

@@ -2,27 +2,7 @@
   min-height: 100vh;
 }
 
-.hero {
-  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
-  padding: 6rem 0 4rem;
-  text-align: center;
-}
-
-.pageTitle {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.pageSubtitle {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: var(--color-text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
+/* Hero and page title styles now handled by PageHero component */
 
 .announcementsList {
   display: flex;

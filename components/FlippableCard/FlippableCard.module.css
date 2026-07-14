@@ -1,0 +1,142 @@
+/* Flippable Card Styles */
+.highlightCard {
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  outline: none;
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px);
+}
+
+.highlightCard:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.highlightCard.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 2rem;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(45, 58, 31, 0.08);
+}
+
+.cardFront {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.highlightIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: grayscale(20%);
+}
+
+.cardFront h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.cardFront p {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.cardBack h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.skillsList li {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.skillsList li:last-child {
+  border-bottom: none;
+}
+
+.skillsList li::before {
+  content: '✓';
+  color: var(--color-accent);
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .cardInner {
+    min-height: 240px;
+  }
+
+  .cardFront,
+  .cardBack {
+    padding: 1.5rem;
+  }
+
+  .highlightIcon {
+    font-size: 2.5rem;
+  }
+
+  .cardFront h3 {
+    font-size: 1.3rem;
+  }
+
+  .cardBack h3 {
+    font-size: 1.2rem;
+  }
+
+  .skillsList li {
+    font-size: 0.85rem;
+  }
+}

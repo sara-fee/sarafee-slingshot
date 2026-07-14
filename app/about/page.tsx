@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import Script from 'next/script'
+import PageHero from '@/components/PageHero/PageHero'
+import SectionTitle from '@/components/SectionTitle/SectionTitle'
 import styles from './about.module.css'
 
 export const metadata: Metadata = {
@@ -20,15 +21,10 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className={styles.about}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>About Me</h1>
-          <p className={styles.pageSubtitle}>
-            Passionate developer crafting digital experiences
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        title="About Me" 
+        subtitle="Passionate developer crafting digital experiences"
+      />
 
       {/* Bio Section */}
       <section className="section">
@@ -66,7 +62,7 @@ export default function About() {
       {/* Skills Section */}
       <section className={`section ${styles.skillsSection}`}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>Skills & Technologies</h2>
+          <SectionTitle title="Skills & Technologies" titleId="skills-title" />
           <div className={styles.skillsGrid}>
             <div className={styles.skillCategory}>
               <h3 className={styles.categoryTitle}>Frontend</h3>
@@ -105,7 +101,7 @@ export default function About() {
       {/* Experience Section */}
       <section className="section">
         <div className="container">
-          <h2 className={styles.sectionTitle}>Experience</h2>
+          <SectionTitle title="Experience" titleId="experience-title" />
           <div className={styles.timeline}>
             <div className={styles.timelineItem}>
               <div className={styles.timelineDate}>2021 - Present</div>

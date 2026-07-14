@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Script from 'next/script'
+import PageHero from '@/components/PageHero/PageHero'
+import StructuredData from '@/components/StructuredData/StructuredData'
 import styles from './projects.module.css'
 
 export const metadata: Metadata = {
@@ -76,45 +77,35 @@ const projects = [
 ]
 
 export default function Projects() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Web Development Projects by Your Name',
+    description: 'Portfolio of web development projects',
+    itemListElement: projects.map((project, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: project.title,
+        description: project.description,
+        url: project.liveUrl,
+        author: {
+          '@type': 'Person',
+          name: 'Your Name',
+        },
+        keywords: project.technologies.join(', '),
+      },
+    })),
+  }
+
   return (
     <div className={styles.projects}>
-      {/* JSON-LD Structured Data for ItemList (Projects) */}
-      <Script
-        id="structured-data-projects"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ItemList',
-            name: 'Web Development Projects by Your Name',
-            description: 'Portfolio of web development projects',
-            itemListElement: projects.map((project, index) => ({
-              '@type': 'ListItem',
-              position: index + 1,
-              item: {
-                '@type': 'CreativeWork',
-                name: project.title,
-                description: project.description,
-                url: project.liveUrl,
-                author: {
-                  '@type': 'Person',
-                  name: 'Your Name',
-                },
-                keywords: project.technologies.join(', '),
-              },
-            })),
-          }),
-        }}
+      <StructuredData id="structured-data-projects" data={structuredData} />
+      <PageHero 
+        title="My Projects" 
+        subtitle="A showcase of my recent work and side projects"
       />
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className="container">
-          <h1 className={styles.pageTitle}>My Projects</h1>
-          <p className={styles.pageSubtitle}>
-            A showcase of my recent work and side projects
-          </p>
-        </div>
-      </section>
 
       {/* Projects Grid */}
       <section className="section">
