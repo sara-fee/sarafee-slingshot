@@ -1,9 +1,21 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 import styles from './projects.module.css'
 
-export const metadata = {
-  title: 'Projects | Your Name',
-  description: 'Explore my portfolio of web development projects',
+export const metadata: Metadata = {
+  title: 'Projects & Portfolio',
+  description: 'Explore my portfolio of web development projects including e-commerce platforms, task management apps, weather dashboards, and more. Built with React, Next.js, TypeScript, Node.js, and modern web technologies.',
+  keywords: ['web development projects', 'portfolio', 'React projects', 'Next.js projects', 'full stack projects', 'e-commerce platform', 'task management app', 'developer portfolio'],
+  openGraph: {
+    title: 'Projects & Portfolio | Your Name',
+    description: 'Explore my portfolio of web development projects built with React, Next.js, and modern technologies.',
+    type: 'website',
+    url: 'https://yourwebsite.com/projects',
+  },
+  alternates: {
+    canonical: 'https://yourwebsite.com/projects',
+  },
 }
 
 const projects = [
@@ -66,6 +78,34 @@ const projects = [
 export default function Projects() {
   return (
     <div className={styles.projects}>
+      {/* JSON-LD Structured Data for ItemList (Projects) */}
+      <Script
+        id="structured-data-projects"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Web Development Projects by Your Name',
+            description: 'Portfolio of web development projects',
+            itemListElement: projects.map((project, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'CreativeWork',
+                name: project.title,
+                description: project.description,
+                url: project.liveUrl,
+                author: {
+                  '@type': 'Person',
+                  name: 'Your Name',
+                },
+                keywords: project.technologies.join(', '),
+              },
+            })),
+          }),
+        }}
+      />
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">

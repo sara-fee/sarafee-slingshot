@@ -1,14 +1,58 @@
+import { Metadata } from 'next'
+import Script from 'next/script'
 import ContactForm from '@/components/ContactForm/ContactForm'
 import styles from './contact.module.css'
 
-export const metadata = {
-  title: 'Contact | Your Name',
-  description: 'Get in touch with me for project inquiries and collaborations',
+export const metadata: Metadata = {
+  title: 'Contact Me',
+  description: 'Get in touch for web development projects, freelance opportunities, and collaborations. Based in San Francisco, CA. Available for remote work worldwide.',
+  keywords: ['contact developer', 'hire developer', 'freelance developer', 'web development services', 'San Francisco developer contact', 'project inquiry'],
+  openGraph: {
+    title: 'Contact Your Name | Full Stack Developer',
+    description: 'Get in touch for web development projects and collaborations.',
+    type: 'website',
+    url: 'https://yourwebsite.com/contact',
+  },
+  alternates: {
+    canonical: 'https://yourwebsite.com/contact',
+  },
 }
 
 export default function Contact() {
   return (
     <div className={styles.contact}>
+      {/* JSON-LD Structured Data for ContactPage */}
+      <Script
+        id="structured-data-contact"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact Your Name',
+            description: 'Get in touch for web development projects and collaborations',
+            url: 'https://yourwebsite.com/contact',
+            mainEntity: {
+              '@type': 'Person',
+              name: 'Your Name',
+              email: 'your.email@example.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'San Francisco',
+                addressRegion: 'CA',
+                addressCountry: 'US',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'Professional Services',
+                email: 'your.email@example.com',
+                availableLanguage: ['English'],
+                areaServed: 'Worldwide',
+              },
+            },
+          }),
+        }}
+      />
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">

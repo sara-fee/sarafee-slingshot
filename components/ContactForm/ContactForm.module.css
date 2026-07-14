@@ -22,9 +22,9 @@
 
 .input,
 .textarea {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
+  padding: 0.875rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
   font-size: 1rem;
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
@@ -35,12 +35,14 @@
 .textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(224, 122, 95, 0.12);
+  background-color: var(--color-bg-warm);
 }
 
 .input:hover,
 .textarea:hover {
   border-color: var(--color-primary);
+  background-color: var(--color-bg-warm);
 }
 
 .textarea {
@@ -65,55 +67,97 @@
 }
 
 .submitButton {
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   background-color: var(--color-primary);
   color: white;
   border: none;
-  border-radius: var(--radius-base);
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: var(--radius-full);
+  font-size: 1.0625rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all var(--transition-base);
   align-self: flex-start;
+  box-shadow: var(--shadow-base);
+  letter-spacing: 0.01em;
 }
 
 .submitButton:hover:not(:disabled) {
   background-color: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-warm);
 }
 
 .submitButton:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(-1px);
 }
 
 .submitButton:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
 }
 
 .successMessage {
-  padding: 1rem;
-  background-color: #d1fae5;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
   color: #065f46;
-  border-radius: var(--radius-base);
-  border: 1px solid #6ee7b7;
+  border-radius: var(--radius-xl);
+  border: 2px solid #6ee7b7;
   font-weight: 500;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
 }
 
 .errorMessageBox {
-  padding: 1rem;
-  background-color: #fee2e2;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
   color: #991b1b;
-  border-radius: var(--radius-base);
-  border: 1px solid #fca5a5;
+  border-radius: var(--radius-xl);
+  border: 2px solid #fca5a5;
   font-weight: 500;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
 @media (max-width: 768px) {
+  .form {
+    gap: var(--spacing-md);
+  }
+  
+  .input,
+  .textarea {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .textarea {
+    min-height: 140px;
+  }
+  
   .submitButton {
     width: 100%;
     align-self: stretch;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .successMessage,
+  .errorMessageBox {
+    padding: 1rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .label {
+    font-size: 0.9375rem;
+  }
+  
+  .input,
+  .textarea {
+    padding: 0.875rem 1rem;
+  }
+  
+  .submitButton {
+    padding: 0.875rem 1.5rem;
   }
 }

@@ -1,8 +1,20 @@
+import { Metadata } from 'next'
+import Script from 'next/script'
 import styles from './about.module.css'
 
-export const metadata = {
-  title: 'About | Your Name',
-  description: 'Learn more about my background, skills, and experience',
+export const metadata: Metadata = {
+  title: 'About Me',
+  description: 'Full Stack Developer with 5+ years of experience in React, Next.js, TypeScript, Node.js, and modern web technologies. Based in San Francisco, CA. Specializing in scalable web applications and user-friendly solutions.',
+  keywords: ['full stack developer', 'web developer experience', 'React developer', 'Next.js expert', 'TypeScript developer', 'Node.js', 'San Francisco developer', 'developer skills', 'web development portfolio'],
+  openGraph: {
+    title: 'About Your Name | Full Stack Developer',
+    description: 'Learn about my 5+ years of experience building modern web applications with React, Next.js, and TypeScript.',
+    type: 'profile',
+    url: 'https://yourwebsite.com/about',
+  },
+  alternates: {
+    canonical: 'https://yourwebsite.com/about',
+  },
 }
 
 export default function About() {

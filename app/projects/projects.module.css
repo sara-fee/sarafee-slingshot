@@ -4,20 +4,28 @@
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #fef5ef 0%, #fff8f0 50%, #fef9f3 100%);
+  background-image: 
+    radial-gradient(circle at 25% 35%, rgba(224, 122, 95, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 65%, rgba(129, 178, 154, 0.08) 0%, transparent 50%);
+  color: var(--color-text-primary);
   padding: var(--spacing-2xl) 0;
   text-align: center;
 }
 
 .pageTitle {
-  font-size: 3rem;
+  font-size: 3.25rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
 }
 
 .pageSubtitle {
-  font-size: 1.25rem;
-  opacity: 0.95;
+  font-size: 1.375rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
   margin: 0;
 }
 
@@ -29,20 +37,38 @@
 }
 
 .projectCard {
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-warm) 100%);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
 }
 
 .projectCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-warm);
   border-color: var(--color-primary);
+}
+
+.projectCard:hover::before {
+  opacity: 1;
 }
 
 .projectContent {
@@ -69,13 +95,21 @@
 }
 
 .techTag {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-bg-warm);
   color: var(--color-primary);
-  padding: 0.25rem 0.75rem;
+  padding: 0.375rem 1rem;
   border-radius: var(--radius-full);
   font-size: 0.875rem;
   font-weight: 500;
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.techTag:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
 }
 
 .projectLinks {
@@ -86,10 +120,10 @@
 
 .projectLink {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-base);
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-full);
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   transition: all var(--transition-base);
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
@@ -97,8 +131,9 @@
 }
 
 .projectLink:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-base);
+  background-color: var(--color-bg-warm);
 }
 
 .projectLink.primary {
@@ -109,6 +144,7 @@
 .projectLink.primary:hover {
   background-color: var(--color-primary-dark);
   color: white;
+  box-shadow: var(--shadow-warm);
 }
 
 /* CTA Section */
@@ -134,14 +170,82 @@
   margin-bottom: var(--spacing-lg);
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .pageTitle {
+    font-size: 2.75rem;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
 @media (max-width: 768px) {
   .pageTitle {
-    font-size: 2rem;
+    font-size: 2.25rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1.125rem;
   }
   
   .projectsGrid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .projectCard {
+    padding: var(--spacing-lg);
+  }
+  
+  .projectTitle {
+    font-size: 1.375rem;
+  }
+  
+  .projectLinks {
+    flex-direction: column;
+  }
+  
+  .projectLink {
+    width: 100%;
+    padding: 0.875rem 1rem;
+  }
+  
+  .cta h2 {
+    font-size: 1.75rem;
+  }
+  
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 1.875rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+  
+  .projectCard {
+    padding: var(--spacing-md);
+  }
+  
+  .projectTitle {
+    font-size: 1.25rem;
+  }
+  
+  .technologies {
+    gap: 0.375rem;
+  }
+  
+  .techTag {
+    font-size: 0.8125rem;
+    padding: 0.25rem 0.75rem;
   }
   
   .cta h2 {

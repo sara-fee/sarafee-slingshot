@@ -52,18 +52,19 @@ export default function Navigation() {
         <button
           className={styles.menuButton}
           onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
         >
-          <span className={styles.hamburger}></span>
-          <span className={styles.hamburger}></span>
-          <span className={styles.hamburger}></span>
+          <span className={styles.hamburger} aria-hidden="true"></span>
+          <span className={styles.hamburger} aria-hidden="true"></span>
+          <span className={styles.hamburger} aria-hidden="true"></span>
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className={styles.mobileMenu}>
+        <div id="mobile-menu" className={styles.mobileMenu} role="navigation" aria-label="Mobile navigation">
           <ul className={styles.mobileNavLinks}>
             {navLinks.map((link) => (
               <li key={link.href}>
