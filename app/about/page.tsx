@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Full Stack Developer with 5+ years of experience in React, Next.js, TypeScript, Node.js, and modern web technologies. Based in San Francisco, CA. Specializing in scalable web applications and user-friendly solutions.',
   keywords: ['full stack developer', 'web developer experience', 'React developer', 'Next.js expert', 'TypeScript developer', 'Node.js', 'San Francisco developer', 'developer skills', 'web development portfolio'],
   openGraph: {
-    title: 'About Your Name | Full Stack Developer',
+    title: 'About Sara Fee | Full Stack Developer',
     description: 'Learn about my 5+ years of experience building modern web applications with React, Next.js, and TypeScript.',
     type: 'profile',
     url: 'https://yourwebsite.com/about',
@@ -36,7 +36,7 @@ export default function About() {
               </div>
             </div>
             <div className={styles.bioContent}>
-              <h2>Hello, I'm Your Name</h2>
+              <h2>Hello, I'm Sara Fee</h2>
               <p>
                 I'm a passionate full-stack developer with over 5 years of
                 experience building modern web applications. I specialize in

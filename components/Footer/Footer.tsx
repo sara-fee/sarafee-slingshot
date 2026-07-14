@@ -9,7 +9,7 @@ export default function Footer() {
       <div className={`container ${styles.footerContainer}`}>
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
-            <h3 className={styles.footerTitle}>Your Name</h3>
+            <h3 className={styles.footerTitle}>Sara Fee</h3>
             <p className={styles.footerDescription}>
               Building modern web experiences with passion and precision.
             </p>
@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className={styles.footerBottom}>
           <p className={styles.copyright}>
-            &copy; {currentYear} Your Name. All rights reserved.
+            &copy; {currentYear} Sara Fee. All rights reserved.
           </p>
         </div>
       </div>

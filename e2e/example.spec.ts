@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 test.describe('Homepage', () => {
   test('should load successfully', async ({ page }) => {
     await page.goto('/')
-    await expect(page).toHaveTitle(/Your Name/)
+    await expect(page).toHaveTitle(/Sara Fee/)
   })
 
   test('should have navigation links', async ({ page }) => {
@@ -35,11 +35,11 @@ test.describe('Homepage', () => {
     // Test mobile viewport
     await page.setViewportSize({ width: 375, height: 667 })
     await page.goto('/')
-    await expect(page.getByRole('heading', { name: /your name/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /Sara Fee/i })).toBeVisible()
     
     // Test tablet viewport
     await page.setViewportSize({ width: 768, height: 1024 })
-    await expect(page.getByRole('heading', { name: /your name/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /Sara Fee/i })).toBeVisible()
   })
 })
 

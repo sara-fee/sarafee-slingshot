@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     name: 'Sarah Johnson',
     role: 'Product Manager',
     company: 'Tech Innovations Inc.',
-    text: 'Working with Your Name was an absolute pleasure. They delivered a high-quality web application that exceeded our expectations. Their attention to detail and commitment to best practices is outstanding.',
+    text: 'Working with Sara Fee was an absolute pleasure. They delivered a high-quality web application that exceeded our expectations. Their attention to detail and commitment to best practices is outstanding.',
     rating: 5,
   },
   {
@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     name: 'Michael Chen',
     role: 'CEO',
     company: 'StartupHub',
-    text: 'Your Name transformed our vision into reality with exceptional skill and professionalism. The performance optimizations they implemented reduced our load times by 60%. Highly recommend!',
+    text: 'Sara Fee transformed our vision into reality with exceptional skill and professionalism. The performance optimizations they implemented reduced our load times by 60%. Highly recommend!',
     rating: 5,
   },
   {
@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
     name: 'Emily Rodriguez',
     role: 'Design Lead',
     company: 'Creative Studios',
-    text: 'The collaboration was seamless from start to finish. Your Name has a rare combination of technical expertise and design sensibility. They brought our designs to life perfectly.',
+    text: 'The collaboration was seamless from start to finish. Sara Fee has a rare combination of technical expertise and design sensibility. They brought our designs to life perfectly.',
     rating: 5,
   },
   {
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     name: 'David Thompson',
     role: 'CTO',
     company: 'Digital Solutions Ltd.',
-    text: 'Exceptional developer with deep knowledge of modern web technologies. Your Name delivered clean, maintainable code and was always available for questions and iterations.',
+    text: 'Exceptional developer with deep knowledge of modern web technologies. Sara Fee delivered clean, maintainable code and was always available for questions and iterations.',
     rating: 5,
   },
   {
@@ -51,7 +51,7 @@ const testimonials: Testimonial[] = [
     name: 'Lisa Park',
     role: 'Founder',
     company: 'E-Commerce Ventures',
-    text: 'Our e-commerce platform is now faster, more accessible, and converting better than ever. Your Name\'s expertise in Next.js and performance optimization made all the difference.',
+    text: 'Our e-commerce platform is now faster, more accessible, and converting better than ever. Sara Fee\'s expertise in Next.js and performance optimization made all the difference.',
     rating: 5,
   },
 ]

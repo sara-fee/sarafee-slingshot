@@ -5,10 +5,10 @@ import styles from './announcements.module.css'
 
 export const metadata: Metadata = {
   title: 'Announcements',
-  description: 'Latest updates, news, and announcements from Your Name. Stay informed about new projects, blog posts, and professional updates.',
+  description: 'Latest updates, news, and announcements from Sara Fee. Stay informed about new projects, blog posts, and professional updates.',
   openGraph: {
-    title: 'Announcements | Your Name',
-    description: 'Latest updates, news, and announcements from Your Name',
+    title: 'Announcements | Sara Fee',
+    description: 'Latest updates, news, and announcements from Sara Fee',
     url: 'https://yourwebsite.com/announcements',
   },
   alternates: {
@@ -106,12 +106,12 @@ export default function Announcements() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Your Name - Announcements',
+    name: 'Sara Fee - Announcements',
     description: 'Latest updates, news, and announcements',
     url: 'https://yourwebsite.com/announcements',
     author: {
       '@type': 'Person',
-      name: 'Your Name',
+      name: 'Sara Fee',
     },
     blogPost: announcements.map((announcement) => ({
       '@type': 'BlogPosting',
@@ -120,7 +120,7 @@ export default function Announcements() {
       datePublished: announcement.date,
       author: {
         '@type': 'Person',
-        name: 'Your Name',
+        name: 'Sara Fee',
       },
     })),
   }

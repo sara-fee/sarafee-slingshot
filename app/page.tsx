@@ -1,4 +1,5 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import SectionTitle from '@/components/SectionTitle/SectionTitle'
 import StructuredData from '@/components/StructuredData/StructuredData'
@@ -8,17 +9,11 @@ import NewsletterSubscribe from '@/components/NewsletterSubscribe/NewsletterSubs
 import Testimonials from '@/components/Testimonials/Testimonials'
 import FlippableCard from '@/components/FlippableCard/FlippableCard'
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: 'https://yourwebsite.com',
-  },
-}
-
 export default function Home() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Your Name - Web Development Services',
+    name: 'Sara Fee - Web Development Services',
     description: 'Full Stack Web Development, UI/UX Design, and Performance Optimization Services',
     url: 'https://yourwebsite.com',
     image: 'https://yourwebsite.com/og-image.jpg',
@@ -53,7 +48,7 @@ export default function Home() {
     ],
     provider: {
       '@type': 'Person',
-      name: 'Your Name',
+      name: 'Sara Fee',
       jobTitle: 'Full Stack Developer',
     },
   }
@@ -65,7 +60,7 @@ export default function Home() {
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className="container">
           <h1 id="hero-title" className={styles.heroTitle}>
-            Hi, I'm <span className={styles.highlight}>Your Name</span>
+            Hi, I'm <span className={styles.highlight}>Sara Fee</span>
           </h1>
           <p className={styles.heroSubtitle}>
             Full Stack Developer | Creative Problem Solver | Tech Enthusiast

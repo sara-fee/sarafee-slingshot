@@ -29,7 +29,7 @@ export default function Navigation() {
     <nav className={styles.nav} role="navigation" aria-label="Main navigation">
       <div className={`container ${styles.navContainer}`}>
         <Link href="/" className={styles.logo} aria-label="Home">
-          <span className={styles.logoText}>Your Name</span>
+          <span className={styles.logoText}>Sara Fee</span>
         </Link>
 
         {/* Desktop Navigation */}

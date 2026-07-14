@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Explore my portfolio of web development projects including e-commerce platforms, task management apps, weather dashboards, and more. Built with React, Next.js, TypeScript, Node.js, and modern web technologies.',
   keywords: ['web development projects', 'portfolio', 'React projects', 'Next.js projects', 'full stack projects', 'e-commerce platform', 'task management app', 'developer portfolio'],
   openGraph: {
-    title: 'Projects & Portfolio | Your Name',
+    title: 'Projects & Portfolio | Sara Fee',
     description: 'Explore my portfolio of web development projects built with React, Next.js, and modern technologies.',
     type: 'website',
     url: 'https://yourwebsite.com/projects',
@@ -80,7 +80,7 @@ export default function Projects() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Web Development Projects by Your Name',
+    name: 'Web Development Projects by Sara Fee',
     description: 'Portfolio of web development projects',
     itemListElement: projects.map((project, index) => ({
       '@type': 'ListItem',
@@ -92,7 +92,7 @@ export default function Projects() {
         url: project.liveUrl,
         author: {
           '@type': 'Person',
-          name: 'Your Name',
+          name: 'Sara Fee',
         },
         keywords: project.technologies.join(', '),
       },

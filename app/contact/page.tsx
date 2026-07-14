@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Get in touch for web development projects, freelance opportunities, and collaborations. Based in San Francisco, CA. Available for remote work worldwide.',
   keywords: ['contact developer', 'hire developer', 'freelance developer', 'web development services', 'San Francisco developer contact', 'project inquiry'],
   openGraph: {
-    title: 'Contact Your Name | Full Stack Developer',
+    title: 'Contact Sara Fee | Full Stack Developer',
     description: 'Get in touch for web development projects and collaborations.',
     type: 'website',
     url: 'https://yourwebsite.com/contact',
@@ -23,12 +23,12 @@ export default function Contact() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: 'Contact Your Name',
+    name: 'Contact Sara Fee',
     description: 'Get in touch for web development projects and collaborations',
     url: 'https://yourwebsite.com/contact',
     mainEntity: {
       '@type': 'Person',
-      name: 'Your Name',
+      name: 'Sara Fee',
       email: 'your.email@example.com',
       address: {
         '@type': 'PostalAddress',
