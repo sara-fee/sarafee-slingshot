@@ -1,0 +1,189 @@
+.skeleton {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.08);
+  border: 1px solid rgba(139, 115, 85, 0.1);
+}
+
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skeletonContent {
+  margin-bottom: 1.5rem;
+}
+
+.skeletonLine {
+  background: linear-gradient(
+    90deg,
+    rgba(139, 115, 85, 0.08) 25%,
+    rgba(139, 115, 85, 0.15) 50%,
+    rgba(139, 115, 85, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  height: 1.5rem;
+  width: 70%;
+}
+
+.description {
+  height: 1rem;
+  width: 100%;
+}
+
+.name {
+  height: 1rem;
+  width: 60%;
+}
+
+.role {
+  height: 0.875rem;
+  width: 50%;
+}
+
+.quote {
+  height: 1rem;
+  width: 100%;
+}
+
+.date {
+  height: 0.875rem;
+  width: 40%;
+}
+
+.skeletonTags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.skeletonTag {
+  height: 1.75rem;
+  width: 4rem;
+  background: linear-gradient(
+    90deg,
+    rgba(139, 115, 85, 0.08) 25%,
+    rgba(139, 115, 85, 0.15) 50%,
+    rgba(139, 115, 85, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 20px;
+}
+
+.skeletonLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.skeletonButton {
+  height: 2.5rem;
+  width: 6rem;
+  background: linear-gradient(
+    90deg,
+    rgba(139, 115, 85, 0.08) 25%,
+    rgba(139, 115, 85, 0.15) 50%,
+    rgba(139, 115, 85, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.skeletonHeader {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skeletonAvatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    rgba(139, 115, 85, 0.08) 25%,
+    rgba(139, 115, 85, 0.15) 50%,
+    rgba(139, 115, 85, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  flex-shrink: 0;
+}
+
+.skeletonAuthor {
+  flex: 1;
+}
+
+.skeletonStars {
+  height: 1rem;
+  width: 6rem;
+  background: linear-gradient(
+    90deg,
+    rgba(139, 115, 85, 0.08) 25%,
+    rgba(139, 115, 85, 0.15) 50%,
+    rgba(139, 115, 85, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.skeletonBadge {
+  height: 1.5rem;
+  width: 4rem;
+  background: linear-gradient(
+    90deg,
+    rgba(139, 115, 85, 0.08) 25%,
+    rgba(139, 115, 85, 0.15) 50%,
+    rgba(139, 115, 85, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .skeletonLine,
+  .skeletonTag,
+  .skeletonButton,
+  .skeletonAvatar,
+  .skeletonStars,
+  .skeletonBadge {
+    animation: none;
+    background: rgba(139, 115, 85, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .skeleton {
+    padding: 1.5rem;
+  }
+
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

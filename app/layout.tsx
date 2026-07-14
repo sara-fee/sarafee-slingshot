@@ -3,6 +3,7 @@ import './globals.css'
 import Navigation from '@/components/Navigation/Navigation'
 import Footer from '@/components/Footer/Footer'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
 
 // Enhanced SEO metadata
 export const metadata: Metadata = {
@@ -79,6 +80,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        
         {/* JSON-LD Structured Data for Person/Professional */}
         <Script
           id="structured-data-person"
@@ -149,6 +158,27 @@ export default function RootLayout({
         <Navigation />
         <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
+        <Analytics />
+        
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   )

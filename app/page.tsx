@@ -2,6 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import styles from './page.module.css'
+import ResumeDownload from '@/components/ResumeDownload/ResumeDownload'
+import NewsletterSubscribe from '@/components/NewsletterSubscribe/NewsletterSubscribe'
+import Testimonials from '@/components/Testimonials/Testimonials'
 
 export const metadata: Metadata = {
   alternates: {
@@ -78,6 +81,7 @@ export default function Home() {
             <Link href="/projects" className="btn btn-primary" aria-label="View my portfolio projects">
               View My Work
             </Link>
+            <ResumeDownload variant="secondary" />
             <Link href="/contact" className="btn btn-secondary" aria-label="Get in touch with me">
               Get In Touch
             </Link>
@@ -114,6 +118,30 @@ export default function Home() {
                 engine visibility.
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section" aria-labelledby="testimonials-title">
+        <div className="container">
+          <h2 id="testimonials-title" className={styles.sectionTitle}>
+            What Clients Say
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Don't just take my word for it - hear from people I've worked with
+          </p>
+          <div style={{ maxWidth: '900px', margin: '2rem auto 0' }}>
+            <Testimonials variant="default" showAll={false} />
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="section" aria-labelledby="newsletter-title" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <NewsletterSubscribe variant="card" />
           </div>
         </div>
       </section>
