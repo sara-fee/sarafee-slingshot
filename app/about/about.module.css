@@ -1,0 +1,244 @@
+.about {
+  min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: var(--spacing-2xl) 0;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageSubtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* Bio Section */
+.bioSection {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.bioImage {
+  display: flex;
+  justify-content: center;
+}
+
+.imagePlaceholder {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.imageIcon {
+  font-size: 6rem;
+  filter: brightness(0) invert(1);
+}
+
+.bioContent h2 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.bioContent p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Skills Section */
+.skillsSection {
+  background-color: var(--color-bg-secondary);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-primary);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.skillCategory {
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.skillCategory:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.categoryTitle {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.25rem;
+}
+
+.skillList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skillList li {
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: color var(--transition-fast);
+}
+
+.skillList li:last-child {
+  border-bottom: none;
+}
+
+.skillList li:hover {
+  color: var(--color-primary);
+}
+
+/* Timeline */
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 150px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: 144px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-bg-primary);
+  box-shadow: 0 0 0 3px var(--color-border);
+}
+
+.timelineDate {
+  text-align: right;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  padding-top: 4px;
+}
+
+.timelineContent {
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.timelineContent:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.timelineContent h3 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.company {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.timelineContent p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .bioSection {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .imagePlaceholder {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .imageIcon {
+    font-size: 4rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline::before {
+    left: 0;
+  }
+  
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
+  }
+  
+  .timelineItem::before {
+    left: -6px;
+  }
+  
+  .timelineDate {
+    text-align: left;
+  }
+}

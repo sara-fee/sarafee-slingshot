@@ -1,0 +1,126 @@
+.contact {
+  min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: var(--spacing-2xl) 0;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageSubtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* Contact Grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+/* Contact Information */
+.contactInfo h2 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.infoDescription {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+}
+
+.infoItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.infoItem {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: start;
+}
+
+.infoIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.infoItem h3 {
+  color: var(--color-text-primary);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.infoItem p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.infoItem a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.infoItem a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.socialLinks a {
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.socialLinks a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Form Container */
+.formContainer {
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.formContainer h2 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .formContainer {
+    padding: var(--spacing-lg);
+  }
+}

@@ -1,0 +1,142 @@
+.home {
+  min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.hero {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.highlight {
+  color: #fbbf24;
+  display: inline-block;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);
+  opacity: 0.9;
+  line-height: 1.8;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.heroCta {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* Section Title */
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-primary);
+}
+
+/* Highlights Grid */
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.highlightCard {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-border);
+}
+
+.highlightCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.highlightIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.highlightCard h3 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.highlightCard p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+  
+  .heroDescription {
+    font-size: 1rem;
+  }
+  
+  .heroCta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heroCta .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+}
