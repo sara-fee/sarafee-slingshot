@@ -181,6 +181,15 @@
   margin: 0;
 }
 
+/* Social Media Feed Spacing */
+.socialFeed {
+  margin-bottom: 3rem;
+}
+
+.socialFeed:last-child {
+  margin-bottom: 0;
+}
+
 /* Enhanced Responsive Design */
 @media (max-width: 1024px) {
   .pageTitle {

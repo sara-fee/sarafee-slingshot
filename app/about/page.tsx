@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import PageHero from '@/components/PageHero/PageHero'
 import SectionTitle from '@/components/SectionTitle/SectionTitle'
+import SubstackFeed from '@/components/SubstackFeed/SubstackFeed'
 import styles from './about.module.css'
 
 export const metadata: Metadata = {
@@ -94,6 +95,22 @@ export default function About() {
                 <li>Figma / Design Systems</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Section */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle title="Connect With Me" titleId="social-title" />
+          
+          {/* Substack Feed */}
+          <div className={styles.socialFeed}>
+            <SubstackFeed 
+              substackUrl="sarafee.substack.com" 
+              limit={3} 
+              variant="list" 
+            />
           </div>
         </div>
       </section>
