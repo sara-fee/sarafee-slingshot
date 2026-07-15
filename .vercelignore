@@ -1,0 +1,55 @@
+# Environment files
+.env.local
+.env*.local
+
+# Dependencies
+node_modules
+
+# Build output
+.next
+out
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Documentation (optional - remove if you want these deployed)
+README.md
+PROJECT_SETUP.md
+IMPLEMENTATION_SUMMARY.md
+SEO_ENHANCEMENTS.md
+ACCESSIBILITY_RESPONSIVE_ENHANCEMENTS.md
+ANNOUNCEMENTS_TESTIMONIALS_IMPLEMENTATION.md
+FONT_UPDATE_SUMMARY.md
+I18N_REMOVAL_SUMMARY.md
+LOADING_PWA_I18N_IMPLEMENTATION.md
+PWA_ICONS_GUIDE.md
+TESTING_REMOVAL_SUMMARY.md
+REMOVECHILD_ERROR_FIX.md
+CODEBASE_OPTIMIZATION_SUMMARY.md
+VERCEL_OPTIMIZATION_GUIDE.md
+
+# Git
+.git
+.gitignore
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage
+coverage
+.nyc_output

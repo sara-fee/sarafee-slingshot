@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: var(--spacing-2xl);
-  align-items: start;
+  align-items: flex-start;
 }
 
 .bioImage {

@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: var(--spacing-2xl);
-  align-items: start;
+  align-items: flex-start;
 }
 
 /* Contact Information */
@@ -33,7 +33,7 @@
 .infoItem {
   display: flex;
   gap: var(--spacing-md);
-  align-items: start;
+  align-items: flex-start;
 }
 
 .infoIcon {
