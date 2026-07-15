@@ -1,6 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, A11y, Keyboard } from 'swiper/modules'
+import type { Swiper as SwiperType } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 import styles from './Testimonials.module.css'
 
 interface Testimonial {
@@ -62,19 +68,14 @@ interface TestimonialsProps {
 }
 
 export default function Testimonials({ variant = 'default', showAll = false }: TestimonialsProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const displayTestimonials = showAll ? testimonials : [testimonials[currentIndex]]
+  const swiperRef = useRef<SwiperType | null>(null)
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+    swiperRef.current?.slideNext()
   }
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
-
-  const handleDotClick = (index: number) => {
-    setCurrentIndex(index)
+    swiperRef.current?.slidePrev()
   }
 
   const renderStars = (rating: number) => {
@@ -93,72 +94,132 @@ export default function Testimonials({ variant = 'default', showAll = false }: T
     )
   }
 
+  // If showAll is true, display all testimonials in a grid
+  if (showAll) {
+    return (
+      <div className={`${styles.testimonials} ${styles[variant]} ${styles.showAll}`}>
+        <div className={styles.testimonialsList}>
+          {testimonials.map((testimonial) => (
+            <article
+              key={testimonial.id}
+              className={styles.testimonialCard}
+              aria-labelledby={`testimonial-${testimonial.id}-name`}
+            >
+              <div className={styles.quoteIcon} aria-hidden="true">
+                "
+              </div>
+              {renderStars(testimonial.rating)}
+              <blockquote className={styles.testimonialText}>
+                <p>{testimonial.text}</p>
+              </blockquote>
+              <div className={styles.testimonialAuthor}>
+                {testimonial.image ? (
+                  <img
+                    src={testimonial.image}
+                    alt={`${testimonial.name} profile`}
+                    className={styles.authorImage}
+                  />
+                ) : (
+                  <div className={styles.authorImagePlaceholder} aria-hidden="true">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                )}
+                <div className={styles.authorInfo}>
+                  <cite id={`testimonial-${testimonial.id}-name`} className={styles.authorName}>
+                    {testimonial.name}
+                  </cite>
+                  <p className={styles.authorRole}>
+                    {testimonial.role} at {testimonial.company}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  // Use Swiper for carousel mode
   return (
     <div className={`${styles.testimonials} ${styles[variant]}`}>
-      <div className={styles.testimonialsList}>
-        {displayTestimonials.map((testimonial) => (
-          <article
-            key={testimonial.id}
-            className={styles.testimonialCard}
-            aria-labelledby={`testimonial-${testimonial.id}-name`}
-          >
-            <div className={styles.quoteIcon} aria-hidden="true">
-              “
-            </div>
-            {renderStars(testimonial.rating)}
-            <blockquote className={styles.testimonialText}>
-              <p>{testimonial.text}</p>
-            </blockquote>
-            <div className={styles.testimonialAuthor}>
-              {testimonial.image ? (
-                <img
-                  src={testimonial.image}
-                  alt={`${testimonial.name} profile`}
-                  className={styles.authorImage}
-                />
-              ) : (
-                <div className={styles.authorImagePlaceholder} aria-hidden="true">
-                  {testimonial.name.charAt(0)}
-                </div>
-              )}
-              <div className={styles.authorInfo}>
-                <cite id={`testimonial-${testimonial.id}-name`} className={styles.authorName}>
-                  {testimonial.name}
-                </cite>
-                <p className={styles.authorRole}>
-                  {testimonial.role} at {testimonial.company}
-                </p>
+      <Swiper
+        modules={[Navigation, Pagination, A11y, Keyboard]}
+        spaceBetween={30}
+        slidesPerView={1}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper
+        }}
+        pagination={{
+          clickable: true,
+          bulletClass: 'swiper-pagination-bullet',
+          bulletActiveClass: 'swiper-pagination-bullet-active',
+        }}
+        keyboard={{
+          enabled: true,
+          onlyInViewport: true,
+        }}
+        a11y={{
+          prevSlideMessage: 'Previous testimonial',
+          nextSlideMessage: 'Next testimonial',
+          paginationBulletMessage: 'Go to testimonial {{index}}',
+        }}
+        className={styles.swiperContainer}
+      >
+        {testimonials.map((testimonial) => (
+          <SwiperSlide key={testimonial.id}>
+            <article
+              className={styles.testimonialCard}
+              aria-labelledby={`testimonial-${testimonial.id}-name`}
+            >
+              <div className={styles.quoteIcon} aria-hidden="true">
+                "
               </div>
-            </div>
-          </article>
+              {renderStars(testimonial.rating)}
+              <blockquote className={styles.testimonialText}>
+                <p>{testimonial.text}</p>
+              </blockquote>
+              <div className={styles.testimonialAuthor}>
+                {testimonial.image ? (
+                  <img
+                    src={testimonial.image}
+                    alt={`${testimonial.name} profile`}
+                    className={styles.authorImage}
+                  />
+                ) : (
+                  <div className={styles.authorImagePlaceholder} aria-hidden="true">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                )}
+                <div className={styles.authorInfo}>
+                  <cite id={`testimonial-${testimonial.id}-name`} className={styles.authorName}>
+                    {testimonial.name}
+                  </cite>
+                  <p className={styles.authorRole}>
+                    {testimonial.role} at {testimonial.company}
+                  </p>
+                </div>
+              </div>
+            </article>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
-      {!showAll && testimonials.length > 1 && (
+      {testimonials.length > 1 && (
         <div className={styles.controls}>
           <button
             onClick={handlePrev}
             className={styles.controlButton}
             aria-label="Previous testimonial"
+            type="button"
           >
             <span aria-hidden="true">←</span>
           </button>
-          <div className={styles.dots} role="tablist" aria-label="Testimonial navigation">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`${styles.dot} ${index === currentIndex ? styles.dotActive : ''}`}
-                aria-label={`Go to testimonial ${index + 1}`}
-                aria-selected={index === currentIndex}
-                role="tab"
-              />
-            ))}
-          </div>
           <button
             onClick={handleNext}
             className={styles.controlButton}
             aria-label="Next testimonial"
+            type="button"
           >
             <span aria-hidden="true">→</span>
           </button>

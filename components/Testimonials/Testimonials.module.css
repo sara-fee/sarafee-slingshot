@@ -2,6 +2,7 @@
   width: 100%;
 }
 
+/* Used when showAll prop is true */
 .testimonialsList {
   display: flex;
   flex-direction: column;
@@ -12,21 +13,9 @@
   background: var(--color-bg-card);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   position: relative;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.testimonialCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  border-color: var(--color-primary);
-}
-
-.testimonialCard:focus-within {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 2px;
+  border: 2px solid var(--color-primary);
 }
 
 .quoteIcon {
@@ -112,6 +101,7 @@
   margin: 0;
 }
 
+/* Custom navigation controls */
 .controls {
   display: flex;
   align-items: center;
@@ -148,41 +138,6 @@
 
 .controlButton:active {
   transform: scale(0.95);
-}
-
-.dots {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--color-text-secondary);
-  opacity: 0.3;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.dot:hover {
-  opacity: 0.6;
-  transform: scale(1.2);
-}
-
-.dot:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-.dotActive {
-  background: var(--color-primary);
-  opacity: 1;
-  width: 32px;
-  border-radius: 6px;
 }
 
 /* Compact Variant */
