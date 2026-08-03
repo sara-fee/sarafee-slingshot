@@ -27,7 +27,8 @@ const nextConfig = {
   },
   // Experimental features for performance
   experimental: {
-    optimizeCss: true,
+    // Disable CSS optimization in development to prevent HMR errors
+    optimizeCss: process.env.NODE_ENV === 'production',
     optimizePackageImports: ['@vercel/analytics'],
   },
   // Vercel-specific optimizations
