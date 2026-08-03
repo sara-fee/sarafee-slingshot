@@ -48,7 +48,7 @@ export default function Footer() {
                 href={process.env.NEXT_PUBLIC_GITHUB_URL || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.socialLink}
+                className="btn btn-secondary"
                 aria-label="GitHub Profile"
               >
                 GitHub
@@ -57,7 +57,7 @@ export default function Footer() {
                 href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.socialLink}
+                className="btn btn-secondary"
                 aria-label="LinkedIn Profile"
               >
                 LinkedIn
@@ -66,7 +66,7 @@ export default function Footer() {
                 href={process.env.NEXT_PUBLIC_TWITTER_URL || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.socialLink}
+                className="btn btn-secondary"
                 aria-label="Twitter Profile"
               >
                 Twitter

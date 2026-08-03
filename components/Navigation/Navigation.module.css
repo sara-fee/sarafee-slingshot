@@ -111,7 +111,7 @@
   }
 
   &.active {
-    background-color: var(--color-bg-tertiary);
+    background-color: var(--color-bg-primary);
     color: var(--color-primary);
     font-weight: 600;
   }

@@ -86,7 +86,7 @@ export default function Home() {
           <SectionTitle title="Current Writing Projects" titleId="services-title" />
           <div className={styles.highlightsGrid}>
             <FlippableCard
-              icon="💻"
+              icon="🥶 🌌 🌊"
               title="Savant"
               subtitle="Status: Querying"
               description="Dystopian Adventure"
@@ -99,7 +99,7 @@ export default function Home() {
               ]}
             />
             <FlippableCard
-              icon="🎨"
+              icon="🤠 🌄 🐴"
               title="Wild Rust"
               subtitle="Status: Drafting"
               description="Martian Western"
@@ -111,7 +111,7 @@ export default function Home() {
               ]}
             />
             <FlippableCard
-              icon="⚡"
+              icon="🤔 🏞️ 🪄"
               title="Duel Wielding"
               subtitle="Status: Daydreaming"
               description="In a world where magic requires partnership, two childhood best friends are separated when their magics are determined to beyond incompatible."

@@ -83,10 +83,8 @@ export default function RootLayout({
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
+       <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+
         
         {/* JSON-LD Structured Data for Person/Professional */}
         <Script

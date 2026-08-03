@@ -1,20 +1,19 @@
 :root {
   /* Color Palette */
-  --color-primary: #E73636;
-  --color-primary-dark: #1f2915;
-  --color-secondary: #E48BC3;
-  --color-accent: #AAD945;
+  --color-primary: #AAD945;
+  --color-primary-dark: #89B52D;
+  --color-primary-light: #CBE896;
+  --color-accent: #E48BC3;
   
   --color-text-primary: #2A2828;
   --color-text-secondary: #343232;
   --color-text-light: #A5A1A1;
   
   --color-bg-primary: #FFFCF9;
-  --color-bg-secondary: #FFF5EB;
-  --color-bg-tertiary: #FFEBD6;
-  --color-bg-warm: #FFF5EB;
+  --color-bg-secondary: #FFFCF9;
+  --color-bg-accent: #C5E58A;
   
-  --color-border: #CDD2C9;
+  --color-border: #CBE896;
   --color-border-light: #dfe3dc;
   
   /* Spacing */
@@ -26,10 +25,9 @@
   --spacing-2xl: 4rem;
   
   /* Typography */
-  --font-sans: 'Fira Code', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+  --font-sans: 'Epilogue', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
     'Helvetica Neue', Arial, sans-serif;
-  --font-display: 'Playfair Display', 'Georgia', 'Cambria', 'Times New Roman', serif;
-  --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+  --font-display: 'Newsreader', 'Georgia', 'Cambria', 'Times New Roman', serif;
   
   /* Transitions */
   --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -163,7 +161,7 @@ img {
   display: inline-block;
   padding: 0.875rem 2rem;
   border-radius: var(--radius-full);
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   transition: all var(--transition-base);
   cursor: pointer;
@@ -179,23 +177,22 @@ img {
 
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
-  color: white;
   transform: translateY(-3px);
   box-shadow: var(--shadow-warm);
+  color: white;
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-primary-light);
   box-shadow: var(--shadow-sm);
-}
 
-.btn-secondary:hover {
-  background-color: var(--color-primary);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-warm);
+  &:hover {
+    color: var(--color-text-secondary);
+    background-color: var(--color-primary-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-warm);
+  }
 }
 
 /* Enhanced Responsive Typography */

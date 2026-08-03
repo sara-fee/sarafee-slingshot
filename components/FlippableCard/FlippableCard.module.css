@@ -72,14 +72,14 @@
 }
 
 .cardFront p {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Epilogue', sans-serif;
   font-size: 0.95rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
 .cardBack h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Newsreader', serif;
   font-size: 1.3rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
@@ -95,7 +95,7 @@
 }
 
 .skillsList li {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Epilogue', sans-serif;
   font-size: 0.9rem;
   color: var(--color-text);
   padding: 0.5rem 0;
