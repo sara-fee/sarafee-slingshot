@@ -87,7 +87,7 @@
 
 /* Form Container */
 .formContainer {
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-warm) 100%);
+  background: var(--color-bg-primary);
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   border: 2px solid var(--color-border);
@@ -109,10 +109,6 @@
 
 /* Enhanced Responsive Design */
 @media (max-width: 1024px) {
-  .pageTitle {
-    font-size: 2.75rem;
-  }
-  
   .contactGrid {
     grid-template-columns: 1fr 1.25fr;
     gap: var(--spacing-xl);
@@ -120,14 +116,6 @@
 }
 
 @media (max-width: 768px) {
-  .pageTitle {
-    font-size: 2.25rem;
-  }
-  
-  .pageSubtitle {
-    font-size: 1.125rem;
-  }
-  
   .contactGrid {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
@@ -147,14 +135,6 @@
 }
 
 @media (max-width: 480px) {
-  .pageTitle {
-    font-size: 1.875rem;
-  }
-  
-  .pageSubtitle {
-    font-size: 1rem;
-  }
-  
   .formContainer {
     padding: var(--spacing-md);
   }

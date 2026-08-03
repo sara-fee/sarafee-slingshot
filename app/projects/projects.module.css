@@ -12,7 +12,7 @@
 }
 
 .projectCard {
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-warm) 100%);
+  background: var(--color-bg-primary);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
@@ -31,7 +31,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  background: var(--color-primary);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
@@ -147,10 +147,6 @@
 
 /* Enhanced Responsive Design */
 @media (max-width: 1024px) {
-  .pageTitle {
-    font-size: 2.75rem;
-  }
-  
   .projectsGrid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-lg);
@@ -158,14 +154,6 @@
 }
 
 @media (max-width: 768px) {
-  .pageTitle {
-    font-size: 2.25rem;
-  }
-  
-  .pageSubtitle {
-    font-size: 1.125rem;
-  }
-  
   .projectsGrid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
@@ -198,14 +186,6 @@
 }
 
 @media (max-width: 480px) {
-  .pageTitle {
-    font-size: 1.875rem;
-  }
-  
-  .pageSubtitle {
-    font-size: 1rem;
-  }
-  
   .projectCard {
     padding: var(--spacing-md);
   }

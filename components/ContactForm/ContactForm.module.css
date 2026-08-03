@@ -99,7 +99,7 @@
 
 .successMessage {
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  background: #d1fae5;
   color: #065f46;
   border-radius: var(--radius-xl);
   border: 2px solid #6ee7b7;
@@ -109,7 +109,7 @@
 
 .errorMessageBox {
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  background: #fee2e2;
   color: #991b1b;
   border-radius: var(--radius-xl);
   border: 2px solid #fca5a5;

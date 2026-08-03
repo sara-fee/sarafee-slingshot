@@ -21,7 +21,7 @@
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +64,7 @@
 }
 
 .skillCategory {
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-warm) 100%);
+  background: var(--color-bg-primary);
   padding: var(--spacing-xl);
   border-radius: var(--radius-xl);
   border: 2px solid var(--color-border);
@@ -150,7 +150,7 @@
 }
 
 .timelineContent {
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-warm) 100%);
+  background: var(--color-bg-primary);
   padding: var(--spacing-xl);
   border-radius: var(--radius-xl);
   border: 2px solid var(--color-border);
@@ -192,10 +192,6 @@
 
 /* Enhanced Responsive Design */
 @media (max-width: 1024px) {
-  .pageTitle {
-    font-size: 2.75rem;
-  }
-  
   .bioSection {
     gap: var(--spacing-xl);
   }
@@ -206,14 +202,6 @@
 }
 
 @media (max-width: 768px) {
-  .pageTitle {
-    font-size: 2.25rem;
-  }
-  
-  .pageSubtitle {
-    font-size: 1.125rem;
-  }
-  
   .bioSection {
     grid-template-columns: 1fr;
     text-align: center;
@@ -231,10 +219,6 @@
   
   .bioContent p {
     text-align: left;
-  }
-  
-  .sectionTitle {
-    font-size: 1.875rem;
   }
   
   .skillsGrid {
@@ -271,14 +255,6 @@
 }
 
 @media (max-width: 480px) {
-  .pageTitle {
-    font-size: 1.875rem;
-  }
-  
-  .pageSubtitle {
-    font-size: 1rem;
-  }
-  
   .imagePlaceholder {
     width: 150px;
     height: 150px;
@@ -286,10 +262,6 @@
   
   .imageIcon {
     font-size: 3.5rem;
-  }
-  
-  .sectionTitle {
-    font-size: 1.625rem;
   }
   
   .skillCategory {
