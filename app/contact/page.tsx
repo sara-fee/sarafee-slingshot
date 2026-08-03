@@ -32,8 +32,8 @@ export default function Contact() {
       email: 'your.email@example.com',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'San Francisco',
-        addressRegion: 'CA',
+        addressLocality: 'Boston',
+        addressRegion: 'MA',
         addressCountry: 'US',
       },
       contactPoint: {
@@ -81,7 +81,7 @@ export default function Contact() {
                   <div className={styles.infoIcon}>📍</div>
                   <div>
                     <h3>Location</h3>
-                    <p>San Francisco, CA</p>
+                    <p>Boston, MA</p>
                   </div>
                 </div>
 
@@ -95,21 +95,21 @@ export default function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        GitHub
+                        Substack
                       </a>
                       <a
                         href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        LinkedIn
+                        Instagram
                       </a>
                       <a
                         href={process.env.NEXT_PUBLIC_TWITTER_URL || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Twitter
+                        Blusky
                       </a>
                     </div>
                   </div>

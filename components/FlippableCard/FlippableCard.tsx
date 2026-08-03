@@ -6,6 +6,7 @@ import styles from './FlippableCard.module.css'
 interface FlippableCardProps {
   icon: string
   title: string
+  subtitle: string
   description: string
   backTitle: string
   backContent: string[]
@@ -14,6 +15,7 @@ interface FlippableCardProps {
 export default function FlippableCard({
   icon,
   title,
+  subtitle,
   description,
   backTitle,
   backContent,
@@ -47,6 +49,7 @@ export default function FlippableCard({
             {icon}
           </div>
           <h3>{title}</h3>
+          <h4>{subtitle}</h4>
           <p>{description}</p>
         </div>
         <div className={styles.cardBack}>

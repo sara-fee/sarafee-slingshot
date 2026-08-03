@@ -60,20 +60,19 @@ export default function Home() {
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className="container">
           <h1 id="hero-title" className={styles.heroTitle}>
-            Hi, I'm <span className={styles.highlight}>Sara Fee</span>
+            Hi, I'm <span className={styles.highlight}>Sara Fee.</span>
           </h1>
           <p className={styles.heroSubtitle}>
-            Full Stack Developer | Creative Problem Solver | Tech Enthusiast
+            Young Adult SFF Writer | Software Engineer | Crafter
           </p>
           <p className={styles.heroDescription}>
-            I build modern web applications with a focus on user experience,
-            performance, and clean code. Welcome to my digital space.
+            I write fiction, code, and the occasional crochet pattern.
           </p>
           <div className={styles.heroCta}>
-            <Link href="/projects" className="btn btn-primary" aria-label="View my portfolio projects">
+            <Link href="/projects" className="btn btn-primary" aria-label="View my work">
               View My Work
             </Link>
-            <ResumeDownload variant="secondary" />
+            {/* <ResumeDownload variant="secondary" /> */}
             <Link href="/contact" className="btn btn-secondary" aria-label="Get in touch with me">
               Get In Touch
             </Link>
@@ -84,48 +83,43 @@ export default function Home() {
       {/* What I Do Section */}
       <section className="section" aria-labelledby="services-title">
         <div className="container">
-          <SectionTitle title="What I Do" titleId="services-title" />
+          <SectionTitle title="Current Writing Projects" titleId="services-title" />
           <div className={styles.highlightsGrid}>
             <FlippableCard
               icon="💻"
-              title="Web Development"
-              description="Building responsive, performant web applications using modern technologies and best practices."
+              title="Savant"
+              subtitle="Status: Querying"
+              description="Dystopian Adventure"
               backTitle="Technologies & Skills"
               backContent={[
-                'React.js & Next.js',
-                'TypeScript & JavaScript',
-                'HTML5 & CSS3',
-                'Responsive Design',
-                'Progressive Web Apps',
-                'RESTful APIs',
+                'Word Count: 70k',
+                'Genre',
+                'Comps',
+                'Standalone with series potential'
               ]}
             />
             <FlippableCard
               icon="🎨"
-              title="UI/UX Design"
-              description="Creating intuitive and beautiful user interfaces that provide exceptional user experiences."
+              title="Wild Rust"
+              subtitle="Status: Drafting"
+              description="Martian Western"
               backTitle="Design Expertise"
               backContent={[
-                'User-Centered Design',
+                '25% progress on draft 1',
                 'Wireframing & Prototyping',
                 'Design Systems',
-                'Accessibility (WCAG)',
-                'Figma & Adobe XD',
-                'Color Theory & Typography',
               ]}
             />
             <FlippableCard
               icon="⚡"
-              title="Performance Optimization"
-              description="Optimizing applications for speed, accessibility, and search engine visibility."
+              title="Duel Wielding"
+              subtitle="Status: Daydreaming"
+              description="In a world where magic requires partnership, two childhood best friends are separated when their magics are determined to beyond incompatible."
               backTitle="Optimization Focus"
               backContent={[
-                'Core Web Vitals',
+                'No words just vibes',
                 'Code Splitting & Lazy Loading',
                 'Image Optimization',
-                'SEO Best Practices',
-                'Lighthouse Audits',
-                'Caching Strategies',
               ]}
             />
           </div>
@@ -136,8 +130,8 @@ export default function Home() {
       <section className="section" aria-labelledby="testimonials-title">
         <div className="container">
           <SectionTitle 
-            title="What Clients Say" 
-            subtitle="Don't just take my word for it - hear from people I've worked with"
+            title="Savant" 
+            subtitle="More on my current project"
             titleId="testimonials-title"
           />
           <div style={{ maxWidth: '900px', margin: '2rem auto 0' }}>
